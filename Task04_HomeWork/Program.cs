@@ -9,10 +9,10 @@
 Console.Write("Введите первое число: ");
 int numb1 = Convert.ToInt32(Console.ReadLine());
 
-Console.Write("Введите первое число: ");
+Console.Write("Введите второе число: ");
 int numb2 = Convert.ToInt32(Console.ReadLine());
 
-Console.Write("Введите первое число: ");
+Console.Write("Введите третье число: ");
 int numb3 = Convert.ToInt32(Console.ReadLine());
 
 int max = numb1;
