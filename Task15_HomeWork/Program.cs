@@ -15,12 +15,11 @@ if (NumOfWeek > 0 && NumOfWeek <= 5)
     Console.Write("Не выходные");
 }
 
-if (NumOfWeek > 5 && NumOfWeek < 8)
+else if (NumOfWeek > 5 && NumOfWeek < 8)
 {
     Console.Write("Выходные ☻");
 }
-
-if (NumOfWeek < 1 || NumOfWeek > 7)
+else
 {
     Console.Write("Вы ввели не корректный порядковый номер дня недели.");
 }
