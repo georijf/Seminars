@@ -7,22 +7,28 @@
 */
 
 
-Console.WriteLine("Введите число: ");
-string number = Console.ReadLine();
-int len = number.Length;
+Console.WriteLine("Введите пятизначное число:");
+int number = Convert.ToInt32(Console.ReadLine());
 
-if (len == 5)
+if (number >= 10000 && number <= 99999 && IsPalindrome(number))
 {
-    if (number[0] == number[4] && number[1] == number[3])
-    {
-        Console.WriteLine($"{number} - Палиндром");
-    }
-    else
-    {
-        Console.WriteLine($"{number} - НЕ палиндром");
-    }
+    Console.WriteLine("Введено пятизначное число, и оно является палидромом");
 }
 else
 {
-    Console.WriteLine($"ОШИБКА: {number} - не является пятизначным");
+    Console.WriteLine("Число не является палидромом, или введено не пятизначное число");
+}
+
+
+bool IsPalindrome(int number)
+{
+    int originalNumber = number;
+    int reverseNumber = 0;
+    while (number > 0)
+    {
+        int lastDigit = number % 10;
+        reverseNumber = reverseNumber * 10 + lastDigit;
+        number = number / 10;
+    }
+    return originalNumber == reverseNumber;
 }
