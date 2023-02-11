@@ -5,18 +5,17 @@
 5 -> 1, 8, 27, 64, 125
 */
 
-int number = ReadInt("Введите число N: ");
+Console.Write("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Число\tТаблица кубов");
+SquareTable(number);
 
-for (int i = 1; i <= number; i++)
+void SquareTable(int num)
 {
-    Console.Write($"{i * i * i} ");
-}
-
-
-
-// Функция ввода сообщения
-int ReadInt(string message)
-{
-    Console.Write(message);
-    return Convert.ToInt32(Console.ReadLine());
+    int count = 1;
+    while (count <= num)
+    {
+        Console.WriteLine($"{count}\t{count * count * count}");
+        count++;
+    }
 }
