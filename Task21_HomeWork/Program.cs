@@ -5,24 +5,24 @@ A (3,6,8); B(2, 1, -7), -> 15.84
 A(7, -5, 0); B(1, -1, 9)-> 11.53
 */
 
-int x1 = ReadInt("Введите координату X первой точки: ");
-int y1 = ReadInt("Введите координату Y первой точки: ");
-int z1 = ReadInt("Введите координату Z первой точки: ");
-int x2 = ReadInt("Введите координату X второй точки: ");
-int y2 = ReadInt("Введите координату Y второй точки: ");
-int z2 = ReadInt("Введите координату Z второй точки: ");
+Console.WriteLine("Введите координаты первой точки: ");
+int xA = Convert.ToInt32(Console.ReadLine());
+int yA = Convert.ToInt32(Console.ReadLine());
+int zA = Convert.ToInt32(Console.ReadLine());
 
-int A = x2 - x1;
-int B = y2 - y1;
-int C = z1 - z2;
-
-double length = Math.Sqrt(A * A + B * B + C * C);
-Console.WriteLine($"Длинна отрезка {length}");
+Console.WriteLine("Введите координаты второй точки: ");
+int xB = Convert.ToInt32(Console.ReadLine());
+int yB = Convert.ToInt32(Console.ReadLine());
+int zB = Convert.ToInt32(Console.ReadLine());
 
 
-// Функция ввода сообщения
-int ReadInt(string message)
+double distance = GetDistance(xA, yA, zA, xB, yB, zB);
+
+double distanceRound = Math.Round(distance, 2, MidpointRounding.ToZero);
+Console.WriteLine($"Расстояние между указанными точками = {distanceRound}");
+
+
+double GetDistance(double x1, double y1, double z1, double x2, double y2, double z2)
 {
-    Console.Write(message);
-    return Convert.ToInt32(Console.ReadLine());
+    return Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2));
 }
