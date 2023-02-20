@@ -9,7 +9,7 @@ int[] numbers = new int[size];
 
 FillArrayRandomNumbers(numbers);
 PrintArray(numbers);
-int twoNumbersMultiply = TwoNumbersMultiply(numbers);
+
 int result = 0;
 
 
